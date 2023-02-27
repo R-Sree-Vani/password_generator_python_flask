@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Generator</title>
+    <link rel="icon" href="./static/logo.png" type="image/icon type">
+    <style>
+        @media screen and (max-width: 600px){
+			body{
+				margin: auto 0;
+				
+				
+				height: 850px;
+			}
+			
+
+		}
+        body{
+           
+            background-image: linear-gradient(#000428,#004e92);
+            background-repeat: no-repeat;
+            background-size: 200% 200%;
+        }
+        h1{
+            color:#fff;
+        }
+        .outsp{
+            margin-top: 100px;
+			border: 0.5px solid;
+			width: 450px;
+			height: 110px;
+			padding: 80px;
+			background-color: white;
+
+		}
+        .btncls, .cpycls{
+            width:145px;
+            margin: 5px;
+            color: blue;
+            height: 50px;
+			font-size: 28px;
+			border-radius: 7px;
+            border: 0.5px solid blue;
+        }
+        .btncls:hover, .cpycls:hover{
+           background-color: blue;
+           color: #fff;
+           cursor: pointer;
+        }
+        input{
+			height: 50px;
+			font-size: 28px;
+			border-radius: 7px;
+			border: 0.5px solid blue;
+		}
+
+        .inner{
+            display: flex;
+        }
+
+
+    </style>
+</head>
+<body>
+    <center>
+        <h1>Password Generator</h1>
+        <div class="outsp">
+        
+        
+        <form action="">
+            <input type="text" id="password" value="{{ pwd }}" name="prespass" placeholder="Password">
+        </form><br><br>
+        <div class="inner">
+        <form method="POST" action="/generate">
+            <input type="submit" class="btncls" value="Generate">
+        </form>
+       
+        <button id="copy" onclick="funcopy()" class="cpycls">Copy</button>
+        
+        <form action="/clear" method="POST">
+            <input type="submit" class="btncls" value="Clear">
+        </form>
+        </div>
+            
+            </div>
+
+        
+       
+        
+        
+    </center>
+    <script>
+        function funcopy()
+        {
+            const cvar = document.getElementById("password");
+            cvar.select();
+		document.execCommand("copy");
+		 navigator.clipboard.writeText(cvar.value);
+    alert("The password " + cvar.value + " has been copied!");
+        document.getElementById("password").value=cvar.value;
+		
+	    }
+        function funclear(){
+		document.getElementById("password").value="";
+
+	}
+        
+    </script>
+    
+</body>
+</html>
