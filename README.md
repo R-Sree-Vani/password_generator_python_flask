@@ -4,5 +4,5 @@
 <h3>Check out:</h3>
 http://rsreevani.pythonanywhere.com/<br>
 <h2>Screenshots:</h2>
-<img src="https://github.com/R-Sree-Vani/todo_with_flask/blob/master/Screenshot%20(142).png">
+<img src="https://github.com/R-Sree-Vani/password_generator_python_flask.py/blob/main/Screenshot%20(142).png">
 
